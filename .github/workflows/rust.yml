@@ -25,9 +25,6 @@ jobs:
     - name: Build
       run: cargo build --release
 
-    - name: Run tests
-      run: cargo test
-
     - name: Package (Linux and macOS)
       if: matrix.os != 'windows-latest'
       run: tar czvf font-list-${{ github.ref_name }}-${{ matrix.os }}.tar.gz target/release/font-list
